@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(77, 88, 85);
+}
+
+.title {
+    text-align: center;
+    color: rgb(39, 14, 14);
+}
+
+.secciones {
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion1, .seccion2 {
+    border: 1px solid gray;
+    width: 80%;
+}
+
+.seccion1 {
+    margin-bottom: 10%;
+}

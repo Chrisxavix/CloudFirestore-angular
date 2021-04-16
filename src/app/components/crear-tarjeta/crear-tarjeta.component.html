@@ -1,0 +1,25 @@
+<div>
+    <h5>Crear Tarjeta</h5>
+
+    <form [formGroup]="form" (ngSubmit)="enviarDatos()">
+        <div>
+            <input type="text" class="form-control" placeholder="Titular" formControlName="titular">
+        </div>
+        
+        <div>
+            <input type="text" class="form-control" placeholder="Número de tarjeta" formControlName="numeroTarjeta">
+        </div>
+
+        <div>
+            <input type="text" class="form-control" placeholder="Fecha Expiración" formControlName="fechaExpiracion">
+        </div>
+
+        <div>
+            <input type="password" class="form-control" placeholder="CVV" formControlName="cvv">
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</div>
