@@ -3,52 +3,48 @@ Versión: 8.3.21.
 
 Realizar un proyecto con cloud firestore y publicarlo con su hosting.
 
-Tener una cuenta en Firebase: https://firebase.google.com/
+* Tener una cuenta en Firebase: https://firebase.google.com/
 
-Darle a comenzar.
+* Darle a comenzar.
 
-Agregar un proyecto.
+* Agregar un proyecto.
 
-Agregar un nombre, será el dominio del sitio: cloud-host-firestore/firestore
+* Agregar un nombre, será el dominio del sitio: cloud-host-firestore/firestore
 
-Ir al párrafo: "Comienza por agregar Firebase a tu app" y elegir WEB </>.
+* Ir al párrafo: "Comienza por agregar Firebase a tu app" y elegir WEB </>.
 
-Darle un sobrenombre: angularfirestore.
+* Darle un sobrenombre: angularfirestore.
 
-Copiar el script.
+* Ir a: https://github.com/angular/angularfire
 
-Ir a: https://github.com/angular/angularfire
+* Seleccionar Quick Start - Guía Rápida.
 
-Seleccionar Quick Start - Guía Rápida.
+* No importa la versión de angular, se instala: ng add @angular/fire
 
-No importa la versión de angular, se instala: ng add @angular/fire
+* Seleccionamos el proyecto creado: cloud-host-firestore
 
-Seleccionamos el proyecto creado: cloud-host-firestore
+* Copiamos la configuración del enviroment en ambos enviroments de Angular.
 
-Copiamos la configuración del enviroment.
+* En Firestore Web, con el proyecto abierto se dirige a configuración del proyecto.
 
-En Firestore Web, con el proyecto abierto se dirige a configuración del proyecto.
+* En el Script copiamos los datos desde el apiKey.
 
-En el Script copiamos los datos desde el apiKey.
+* Los datos se reemplazan por los que se copió.
 
-Los datos se reemplazan por los que se copió.
+* Configurar en los dos ambientes, local y producción. (enviroments)
 
-Configurar en los dos ambientes, local y producción. (enviroments)
-
-En el modulo principal agregar: 
+* En el modulo principal agregar: 
     * AngularFireModule.initializeApp(environment.firebase)
     * AngularFirestoreModule
 
-Ir a FirestoreWeb y seleccionar en el panel la opción: Cloud Firestore 
+* Ir a FirestoreWeb y seleccionar en el panel la opción: Cloud Firestore 
 
-Darle a Crear base de datos y especificar la opción a crear, en este caso es en modo prueba.
+* Darle a Crear base de datos y especificar la opción a crear, en este caso es en modo prueba.
 
-Seleccionar el área local más cercano.
+* Seleccionar el área local más cercano.
 
-Después de crear se puede editar las reglas para que todos puedan editar.
-Eliminar:
-: if
-request.time < timestamp.date(2021, 5, 16);
+* Después de crear se puede editar las reglas para que todos puedan editar, por lo que se elimina:
+  *  : if request.time < timestamp.date(2021, 5, 16);
 
 
 
