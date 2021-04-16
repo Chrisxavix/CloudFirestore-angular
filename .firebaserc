@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cloud-host-firestore": {
+      "hosting": {
+        "CloudFirestore-angular": [
+          "cloud-host-firestore"
+        ]
+      }
+    }
+  }
+}
