@@ -11,7 +11,6 @@ export class TarjetaService {
   constructor( private firebase: AngularFirestore ) { }
 
   guardarTarjeta(tarjeta: TarjetaCredito): Promise<any> {
-    console.log(tarjeta, 'service tarjeta');
     return this.firebase.collection('tarjetas').add(tarjeta);
   }
 
