@@ -14,7 +14,6 @@ export class CrearTarjetaComponent implements OnInit {
   constructor( 
     private fb: FormBuilder, 
     private TarjetaService: TarjetaService,
-    /* private toastr: ToastrService, */
   ) { 
     this.form = this.fb.group({
       titular: [''],
@@ -36,18 +35,12 @@ export class CrearTarjetaComponent implements OnInit {
       fechaCreación: new Date(),
       fechaActualizacion: new Date(),
     }
-    console.log(tarjeta, 'tarjeta');
-    
-    /* 
     this.TarjetaService.guardarTarjeta(tarjeta).then(response => {
       console.log(response, 'response firestore');
-      this.toastr.success('Transacción realizada con éxito', 'Tarjeta Registrada');
       this.form.reset();
-      this.loading = false;
     }).catch(error => {
-      this.loading = false;
       console.log(error, 'error firestore');
-    }) */
+    })
   }
 
 }

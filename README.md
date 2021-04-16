@@ -21,12 +21,38 @@ Ir a: https://github.com/angular/angularfire
 
 Seleccionar Quick Start - Guía Rápida.
 
+No importa la versión de angular, se instala: ng add @angular/fire
+
+Seleccionamos el proyecto creado: cloud-host-firestore
+
+Copiamos la configuración del enviroment.
+
+En Firestore Web, con el proyecto abierto se dirige a configuración del proyecto.
+
+En el Script copiamos los datos desde el apiKey.
+
+Los datos se reemplazan por los que se copió.
+
+Configurar en los dos ambientes, local y producción. (enviroments)
+
+En el modulo principal agregar: 
+    * AngularFireModule.initializeApp(environment.firebase)
+    * AngularFirestoreModule
+
+Ir a FirestoreWeb y seleccionar en el panel la opción: Cloud Firestore 
+
+Darle a Crear base de datos y especificar la opción a crear, en este caso es en modo prueba.
+
+Seleccionar el área local más cercano.
+
+Después de crear se puede editar las reglas para que todos puedan editar.
+Eliminar:
+: if
+request.time < timestamp.date(2021, 5, 16);
 
 
 
 
-
-ng add @angular/fire
 
 
 Se creará el repositorio y brindará pasos a seguir.
