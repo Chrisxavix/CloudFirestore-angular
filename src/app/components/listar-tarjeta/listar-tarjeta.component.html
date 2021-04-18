@@ -6,8 +6,8 @@
                 <td>{{item.titular}}</td>
                 <td>{{item.numeroTarjeta}}</td>
                 <td>{{item.fechaExpiracion}}</td>
-                <td class="fas">Modificar</td>
-                <td class="fas">Eliminar</td>
+                <td class="fas" (click)="editarTarjeta(item)">Modificar</td>
+                <td class="fas" (click)="eliminarTarjeta(item.id)">Eliminar</td>
             </tr>
         </tbody>
     </table>

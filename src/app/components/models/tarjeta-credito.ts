@@ -5,7 +5,7 @@ export class TarjetaCredito {
     numeroTarjeta: string;
     fechaExpiracion: string;
     cvv: number;
-    fechaCreación: Date;
+    fechaCreación?: Date;
     fechaActualizacion: Date;
 
     constructor( pTitular: string, pNumeroTarjeta: string, pFechaExpiracion: string, pCvv: number ) {

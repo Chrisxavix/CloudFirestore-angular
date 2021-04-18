@@ -1,7 +1,7 @@
 <div>
-    <h5>Crear Tarjeta</h5>
+    <h5>{{titulo}}</h5>
 
-    <form [formGroup]="form" (ngSubmit)="enviarDatos()">
+    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
         <div>
             <input type="text" class="form-control" placeholder="Titular" formControlName="titular">
         </div>

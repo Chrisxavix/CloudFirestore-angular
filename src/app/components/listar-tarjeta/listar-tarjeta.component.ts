@@ -35,4 +35,16 @@ export class ListarTarjetaComponent implements OnInit {
     })
   }
 
+  eliminarTarjeta(id: string) {
+    this.TarjetaService.eliminarTarjeta(id).then(() => {
+      console.log(id, 'eliminado');
+    }, (error) => {
+      console.log(error, 'eliminación erronea');
+    })
+  }
+
+  editarTarjeta(item: TarjetaCredito) {
+    this.TarjetaService.addTarjetaEdit(item);
+  }
+
 }

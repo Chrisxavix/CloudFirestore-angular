@@ -10,6 +10,8 @@ import { TarjetaService } from '../services/tarjeta.service';
 })
 export class CrearTarjetaComponent implements OnInit {
 
+  titulo = 'Crear Tarjeta';
+  id: string | undefined;
   form: FormGroup;
   constructor( 
     private fb: FormBuilder, 
@@ -24,9 +26,35 @@ export class CrearTarjetaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.recibeDatosTarjeta();
   }
 
-  enviarDatos() {
+  recibeDatosTarjeta(){
+    this.TarjetaService.getTarjetaEdit().subscribe(response => {
+      this.id = response.id;
+      this.titulo = 'Editar Tarjeta';
+      console.log(response, 'response???');
+      this.form.patchValue({
+        titular: response.titular,
+        numeroTarjeta: response.numeroTarjeta,
+        fechaExpiracion: response.fechaExpiracion,
+        cvv: response.cvv,
+        fechaActualizacion: new Date()
+      })
+    })
+  }
+
+  guardarTarjeta() {
+    if ( this.id === undefined) {
+      /* Creamos una nueva tarjeta */
+      this.agregarTarjeta();
+    } else if (typeof(this.id) === 'string') {
+      /* Editamos la tarjeta */
+      this.editarTarjeta(this.id);
+    } 
+  }
+
+  agregarTarjeta() {
     const tarjeta: TarjetaCredito = {
       titular: this.form.value.titular,
       fechaExpiracion: this.form.value.fechaExpiracion,
@@ -40,6 +68,24 @@ export class CrearTarjetaComponent implements OnInit {
       this.form.reset();
     }).catch(error => {
       console.log(error, 'error firestore');
+    })
+  }
+
+  editarTarjeta(id: string) {
+    const tarjeta: TarjetaCredito = {
+      titular: this.form.value.titular,
+      fechaExpiracion: this.form.value.fechaExpiracion,
+      numeroTarjeta: this.form.value.numeroTarjeta,
+      cvv: this.form.value.cvv,
+      fechaActualizacion: new Date(),
+    }
+    this.TarjetaService.editarTarjeta(id, tarjeta).then(()=> {
+      console.log('Tarjeta Guardada');
+      this.titulo = 'Agregar Tarjeta';
+      this.form.reset();
+      this.id = undefined;
+    }, (error) => {
+      console.log(error, 'error');
     })
   }
 
