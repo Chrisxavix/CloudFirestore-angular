@@ -11,6 +11,8 @@ import { TarjetaService } from '../services/tarjeta.service';
 export class CrearTarjetaComponent implements OnInit {
 
   titulo = 'Crear Tarjeta';
+  accion = 'Crear';
+  editarCancelar = false;
   id: string | undefined;
   form: FormGroup;
   constructor( 
@@ -33,6 +35,8 @@ export class CrearTarjetaComponent implements OnInit {
     this.TarjetaService.getTarjetaEdit().subscribe(response => {
       this.id = response.id;
       this.titulo = 'Editar Tarjeta';
+      this.accion = 'Modificar';
+      this.editarCancelar = true;
       console.log(response, 'response???');
       this.form.patchValue({
         titular: response.titular,
@@ -84,9 +88,19 @@ export class CrearTarjetaComponent implements OnInit {
       this.titulo = 'Agregar Tarjeta';
       this.form.reset();
       this.id = undefined;
+      this.accion = 'Crear';
+      this.editarCancelar = false;
     }, (error) => {
       console.log(error, 'error');
     })
+  }
+
+  cancelar() {
+    this.form.reset();
+    this.titulo = 'Crear Tarjeta';
+    this.editarCancelar = false;
+    this.accion = 'Crear';
+    this.id = undefined;
   }
 
 }

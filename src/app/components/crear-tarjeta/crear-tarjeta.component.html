@@ -19,7 +19,12 @@
         </div>
 
         <div>
-            <button type="submit">Enviar</button>
+            <div>
+                <button type="submit">{{accion}}</button>
+            </div>
+            <div *ngIf="editarCancelar">
+                <button type="button" (click)="cancelar()">Cancelar</button>
+            </div>
         </div>
     </form>
 </div>
