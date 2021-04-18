@@ -14,7 +14,13 @@ export class TarjetaService {
     return this.firebase.collection('tarjetas').add(tarjeta);
   }
 
+  /* Solo obtiene la data */
   obtenerTarjetas(): Observable<any> {
     return this.firebase.collection('tarjetas').snapshotChanges();
+  }
+
+  /* Ordenar por fecha de creación */
+  obtenerOrdenarTarjetas(): Observable<any> {
+    return this.firebase.collection('tarjetas', ref => ref.orderBy('fechaCreación', 'asc')).snapshotChanges();
   }
 }
